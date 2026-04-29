@@ -44,7 +44,7 @@ A gaming company wants a web-based Tic-Tac-Toe AI opponent that:
 ## 📁 Folder Structure
 
 ```
-AI_ProblemSolving_<RegisterNumber>/
+AI_ProblemSolving_<RA2411026050079>/
 │
 ├── index.html      ← Main game page (open this in browser)
 ├── style.css       ← All visual styling
@@ -102,21 +102,3 @@ Alpha-Beta pruned 221 extra nodes (86.7% fewer).
 | Nodes (empty board) | ~255 | ~34–60 |
 | Time (first move) | ~0.1–0.5ms | ~0.02–0.1ms |
 | Optimal Move | ✅ Always | ✅ Always |
-| Pruning | ❌ None | ✅ Yes |
-
----
-
-## 👥 Team Members
-
-| Name | Register Number |
-|------|----------------|
-| Member 1 | XXXX |
-| Member 2 | XXXX |
-
----
-
-## 📚 References
-
-- Russell, S. & Norvig, P. — *Artificial Intelligence: A Modern Approach*
-- Minimax Algorithm — [Wikipedia](https://en.wikipedia.org/wiki/Minimax)
-- Alpha–beta pruning — [Wikipedia](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning)

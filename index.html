@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Tic-Tac-Toe — Minimax vs Alpha-Beta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="left">
+    <div class="header">
+      <h1><span class="x">X</span> TicTacToe <span class="o">O</span></h1>
+      <p class="sub">You vs Artificial Intelligence</p>
+    </div>
+    <div class="settings">
+      <div class="sg">
+        <label>AI Algorithm</label>
+        <div class="tbs">
+          <button class="tb on" id="b-mm" onclick="setMethod('minimax')">Minimax</button>
+          <button class="tb" id="b-ab" onclick="setMethod('alphabeta')">Alpha-Beta</button>
+        </div>
+      </div>
+      <div class="sg">
+        <label>You Play As</label>
+        <div class="tbs">
+          <button class="tb on alt" id="b-x" onclick="setSide('X')">X (First)</button>
+          <button class="tb" id="b-o" onclick="setSide('O')">O (Second)</button>
+        </div>
+      </div>
+    </div>
+    <div class="scores">
+      <div class="sc you"><span class="sc-lbl">You</span><span class="sc-val" id="s-p">0</span></div>
+      <div class="sc mid"><span class="sc-lbl">Draw</span><span class="sc-val" id="s-d">0</span></div>
+      <div class="sc ai"><span class="sc-lbl">AI</span><span class="sc-val" id="s-a">0</span></div>
+    </div>
+    <div class="status" id="status">Your turn — click any cell</div>
+    <div class="board-wrap">
+      <div class="board" id="board">
+        <div class="cell" data-i="0" onclick="move(0)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="1" onclick="move(1)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="2" onclick="move(2)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="3" onclick="move(3)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="4" onclick="move(4)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="5" onclick="move(5)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="6" onclick="move(6)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="7" onclick="move(7)"><div class="cell-inner"></div></div>
+        <div class="cell" data-i="8" onclick="move(8)"><div class="cell-inner"></div></div>
+      </div>
+      <div class="ai-thinking" id="thinking">
+        AI thinking<div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <button class="btn-new" onclick="newGame()">New Game</button>
+  </div>
+  <div class="right">
+    <div class="panel">
+      <div class="panel-title">AI Performance</div>
+      <div class="stat-row"><span class="stat-key">Method</span><span class="stat-val" id="pm">—</span></div>
+      <div class="stat-row"><span class="stat-key">Nodes Explored</span><span class="stat-val" id="pn">—</span></div>
+      <div class="stat-row"><span class="stat-key">Time Taken</span><span class="stat-val" id="pt">—</span></div>
+      <div class="stat-row"><span class="stat-key">Cells Remaining</span><span class="stat-val" id="pc">—</span></div>
+      <div id="nbar" class="minibar" style="display:none"><div class="minibar-fill" id="nbar-fill"></div></div>
+    </div>
+    <div class="compare" id="compare"></div>
+    <div class="panel">
+      <div class="panel-title">Game Log</div>
+      <div class="history" id="history"><div class="hist-empty">No games played yet</div></div>
+    </div>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
